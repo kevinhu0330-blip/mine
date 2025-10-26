@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From Displacement to Reinstatement: How Technology Reshapes Work</title>
+  <meta name="description" content="A student-friendly explainer on how automation displaces and reinstates labor—and the skills that help people complement AI."/>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-2: #10b981;
+      --card: #f8fafc;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px rgba(2,6,23,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-2: #34d399;
+        --card: #0f172a;
+        --border: #1f2937;
+        --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      }
+    }
+    /* Base */
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .pill { display:inline-flex; gap:.5ch; align-items:center; font-size:.85rem; padding:.35rem .7rem; border:1px solid var(--border); border-radius:999px; background: var(--card); color: var(--muted); }
+    .btn { display:inline-flex; align-items:center; gap:.6ch; padding:.7rem 1rem; border-radius:12px; border:1px solid var(--border); background:var(--accent); color:white; box-shadow: var(--shadow); text-decoration:none; }
+    .btn.secondary { background:transparent; color:var(--accent); }
+    .btn:hover { filter: brightness(1.05); }
+    .muted { color: var(--muted); }
+    .lead { font-size:1.2rem; color: var(--muted); }
+    .hero { position:relative; padding-top:56px; padding-bottom:40px; }
+    .hero h1 { font-size: clamp(2rem, 3.5vw + 1rem, 3rem); line-height:1.15; margin: 12px 0 12px; }
+    .hero .sub { max-width: 56ch; }
+    .grid { display:grid; gap:20px; }
+    @media (min-width: 820px) { .grid.cols-2 { grid-template-columns: 1.25fr 1fr; } }
+    .card { background: var(--card); border:1px solid var(--border); border-radius:18px; padding:20px; box-shadow: var(--shadow); }
+    section { margin: 42px 0; }
+    h2 { font-size: clamp(1.4rem, 2.2vw + .6rem, 2rem); margin-bottom: 8px; }
+    h3 { margin: 10px 0 2px; }
+    .tag { font-weight: 600; color: var(--accent); }
+    .inline-stat { display:inline-block; padding:.25rem .5rem; border:1px dashed var(--border); border-radius:8px; background: rgba(37, 99, 235, .06); }
+    .callout { border-left:4px solid var(--accent-2); background: linear-gradient(180deg, rgba(16,185,129,.07), transparent); padding:14px 16px; border-radius:12px; }
+    .skills { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .skill { border:1px solid var(--border); border-radius:14px; padding:14px; background: var(--card); }
+    .skill h4 { margin:0 0 6px; font-size:1rem; }
+    .footer { margin-top: 56px; padding: 24px 0 40px; border-top:1px solid var(--border); font-size:.95rem; }
+    .toc { position: sticky; top: 16px; }
+    .toc a { display:block; padding:6px 0; color: var(--muted); }
+    .toc a:hover { color: var(--accent); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.9em; padding:.1rem .4rem; border:1px solid var(--border); border-radius:6px; background: var(--card); color: var(--muted); }
+    figure { margin: 0; }
+    figcaption { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+    /* Simple badge list */
+    .badges { display:flex; gap:8px; flex-wrap:wrap; }
+    .badge { background: var(--card); color: var(--muted); border:1px solid var(--border); border-radius:999px; padding:.35rem .7rem; font-size:.85rem; }
+    /* Responsive SVG wrapper */
+    .svg-wrap { width:100%; aspect-ratio: 16/9; background: var(--bg); border:1px solid var(--border); border-radius: 14px; overflow:hidden; }
+  </style>
+</head>
+<body>
+  <header class="container hero">
+    <div class="pill" aria-label="Audience">🎓 Students & Early-Career • 🤖 AI & Work</div>
+    <h1>From Displacement to Reinstatement: How Technology Reshapes Work</h1>
+    <p class="lead sub">Automation can <em>displace</em> some tasks, but new technologies also <em>reinstate</em> human work. This page explains the balance—and how to build skills that complement AI.</p>
+    <div class="badges" style="margin-top:10px">
+      <span class="badge">Task-based view</span>
+      <span class="badge">Plain language</span>
+      <span class="badge">Visuals included</span>
+    </div>
+  </header>
+
+  <main class="container grid cols-2" id="main">
+    <aside class="toc" aria-label="Table of contents">
+      <div class="card" role="navigation">
+        <strong>On this page</strong>
+        <nav>
+          <a href="#two-forces">The two forces</a>
+          <a href="#task-content">Task content of production</a>
+          <a href="#so-so">“So‑so” technologies</a>
+          <a href="#skills">Skills to complement AI</a>
+          <a href="#why-it-matters">Why it matters</a>
+          <a href="#takeaway">Takeaway</a>
+          <a href="#reference">Reference</a>
+        </nav>
+      </div>
+    </aside>
+
+    <article>
+      <section id="two-forces" class="card">
+        <h2>⚙️ The Two Forces of Technological Change</h2>
+        <div class="grid">
+          <div>
+            <h3>1) Displacement effect</h3>
+            <p>Automation lets machines or software perform tasks once done by people (e.g., industrial robots, accounting software). This typically <strong>reduces labor’s share</strong> of value added because fewer tasks require humans.</p>
+            <h3>2) Reinstatement effect</h3>
+            <p>New technologies also <strong>create new human tasks</strong>—like programming, design, data analysis, and cybersecurity—raising demand for skills where people have an advantage.</p>
+            <p class="callout">Historical pattern: In the post‑WWII decades, displacement and reinstatement roughly <strong>offset</strong> each other. Since the late 1990s, displacement has run <strong>ahead</strong> of reinstatement, contributing to slower job and wage growth.</p>
+          </div>
+          <figure>
+            <div class="svg-wrap" aria-hidden="true">
+              <!-- Accessible, inline SVG chart (no external deps). Illustrative only. -->
+              <svg viewBox="0 0 800 450" role="img" aria-labelledby="chartTitle chartDesc">
+                <title id="chartTitle">Illustrative trend: Displacement vs Reinstatement</title>
+                <desc id="chartDesc">Two lines from 1950 to 2020 showing displacement catching up and overtaking reinstatement after 1990s.</desc>
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="800" height="450" fill="transparent"/>
+                <!-- Axes -->
+                <line x1="60" y1="380" x2="780" y2="380" stroke="var(--border)"/>
+                <line x1="60" y1="60" x2="60" y2="380" stroke="var(--border)"/>
+                <!-- Reinstatement line -->
+                <path d="M60,320 C160,280 260,240 360,220 C460,210 560,200 660,210 C720,220 760,230 780,235" stroke="var(--accent-2)" stroke-width="3" fill="none"/>
+                <!-- Displacement line -->
+                <path d="M60,340 C160,330 260,310 360,290 C460,260 560,220 660,200 C720,190 760,185 780,180" stroke="var(--accent)" stroke-width="3" fill="none"/>
+                <text x="690" y="195" font-size="14" fill="var(--muted)">Displacement</text>
+                <text x="690" y="230" font-size="14" fill="var(--muted)">Reinstatement</text>
+                <!-- Caption area -->
+                <rect x="70" y="60" width="280" height="74" rx="10" fill="var(--card)" stroke="var(--border)"/>
+                <text x="86" y="88" font-size="14" fill="var(--muted)">Since late 1990s:</text>
+                <text x="86" y="108" font-size="14" fill="var(--muted)">Displacement &gt; Reinstatement</text>
+              </svg>
+            </div>
+            <figcaption>Illustration: displacement has outpaced reinstatement in recent decades.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="task-content" class="card">
+        <h2>🧩 The Task Content of Production</h2>
+        <p>Think of production as a checklist of tasks. Some are done by <strong>labor</strong>, some by <strong>capital</strong>. Automation shifts the checklist toward capital; new roles shift it back toward labor. Economists track this balance to understand changes in labor demand.</p>
+        <ul>
+          <li><span class="tag">Automation →</span> more tasks moved to machines → lower labor share.</li>
+          <li><span class="tag">New tasks →</span> more human‑advantaged tasks → higher labor share.</li>
+        </ul>
+        <p class="inline-stat" aria-label="stat">Key idea: Automation increases the size of the pie, but can shrink labor’s slice unless new human tasks also expand.</p>
+      </section>
+
+      <section id="so-so" class="card">
+        <h2>🤖 Beware “So‑So” Technologies</h2>
+        <p>Some tools displace workers yet add little productivity—for example, clunky automated phone menus. Overuse leads to <strong>fewer jobs</strong> without meaningful efficiency gains. Favor automation that <em>amplifies</em> human capability.</p>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>💡 Build Skills that <em>Complement</em> AI</h2>
+        <p>Jobs thrive when they tap advantages that are hard for machines to copy. Blend technical fluency with human strengths.</p>
+        <div class="skills">
+          <div class="skill">
+            <h4>Creativity & Synthesis</h4>
+            <p>Design novel products, frame questions, connect ideas across domains.</p>
+            <div class="muted">Try: project studios, hackathons, research seminars.</div>
+          </div>
+          <div class="skill">
+            <h4>Communication</h4>
+            <p>Translate data into decisions; write clearly for mixed audiences.</p>
+            <div class="muted">Try: presentations, policy briefs, technical blogging.</div>
+          </div>
+          <div class="skill">
+            <h4>Collaboration & EI</h4>
+            <p>Lead teams, mediate conflicts, co‑create with diverse stakeholders.</p>
+            <div class="muted">Try: team projects, peer reviews, mentoring.</div>
+          </div>
+          <div class="skill">
+            <h4>Adaptability & Tool Fluency</h4>
+            <p>Switch between tools (prompting, Python/R, spreadsheets) and workflows.</p>
+            <div class="muted">Try: learn‑by‑building, internships, open‑source contributions.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-it-matters" class="card">
+        <h2>📈 Why It Matters</h2>
+        <ul>
+          <li><strong>Students:</strong> AI won’t replace you—but people who use AI well might. Build complementary skills.</li>
+          <li><strong>Early‑career:</strong> Seek roles where tech augments judgment, not just replicates repetitive tasks.</li>
+          <li><strong>Policy:</strong> Education and incentives that encourage <em>new human tasks</em> help align productivity and wages.</li>
+        </ul>
+      </section>
+
+      <section id="takeaway" class="card">
+        <h2>🏁 Takeaway</h2>
+        <p>Automation isn’t the end of work—it’s the <strong>redesign</strong> of work. The goal is not to compete with machines but to <strong>collaborate</strong> with them. Keep reinstating yourself by pairing technology with human creativity, empathy, and communication.</p>
+      </section>
+
+      <section id="reference" class="card">
+        <h2>📚 Reference</h2>
+        <p>Acemoglu, D., & Restrepo, P. (2019). <em>Automation and New Tasks: How Technology Displaces and Reinstates Labor</em>. <em>Journal of Economic Perspectives</em>, 33(2), 3–30. <a href="https://doi.org/10.1257/jep.33.2.3" target="_blank" rel="noopener">https://doi.org/10.1257/jep.33.2.3</a></p>
+        <p class="muted">This page is an educational summary intended for students and early‑career readers.</p>
+      </section>
+
+      <p><a class="btn secondary" href="#top" aria-label="Back to top">↑ Back to top</a></p>
+    </article>
+  </main>
+
+  <footer class="container footer">
+    <div>© <span id="year"></span> From Displacement to Reinstatement • Built for student readers.</div>
+    <div class="muted">Tip: Use <span class="kbd">Ctrl</span> + <span class="kbd">F</span> / <span class="kbd">⌘</span> + <span class="kbd">F</span> to find sections quickly.</div>
+  </footer>
+
+  <script>
+    // Set year, basic enhancement only.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
